@@ -1,7 +1,7 @@
 from DataStructures.Trie import Trie
 from Extraction.extract import *
 from Data.CSVDataSourceRead import CSVDataSourceRead
-from Data.DataFilter import RFilter
+from Data.RFilter import RFilter
 
 class Engine:
     def __init__(self,dataSource , dataFilter):
