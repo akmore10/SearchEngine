@@ -10,3 +10,5 @@ class SKU:
         self.brand = brand
         self.sales = sales
         self.price = price
+    def __str__(self) -> str:
+        return "{} {} {} {} {} {}".format(self.id,self.sku,self.product_line,self.brand,self.sales,self.price)
