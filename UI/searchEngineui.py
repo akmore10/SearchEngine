@@ -9,12 +9,16 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QAction,QMessageBox
+from UI.CustomElements.Popup import CustomPopup
+
 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
+
         MainWindow.setFixedSize(922, 713)
         cols = ['SKU_ID', 'Sku', 'Product_line', 'Brand', 'Sales', 'Price']
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -73,10 +77,11 @@ class Ui_MainWindow(object):
         self.menubar.setObjectName("menubar")
         self.menuSearch = QtWidgets.QMenu(self.menubar)
         self.menuSearch.setObjectName("menuSearch")
+
         MainWindow.setMenuBar(self.menubar)
-        # self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        # self.statusbar.setObjectName("statusbar")
-        # MainWindow.setStatusBar(self.statusbar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
         self.toolBar = QtWidgets.QToolBar(MainWindow)
         self.toolBar.setObjectName("toolBar")
         MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
@@ -92,10 +97,15 @@ class Ui_MainWindow(object):
     
     def setData(self):
         pass
-    
+    def popup(self):
+        popup = CustomPopup(self)
+        popup.exec_()
+
     def retranslateUi(self, MainWindow):
-        _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle("Search Engine")
+        qAction = QAction("popup",MainWindow)
+        qAction.triggered.connect(self.popup)
+        self.menuSearch.addAction(qAction)
 
 
 if __name__ == "__main__":
