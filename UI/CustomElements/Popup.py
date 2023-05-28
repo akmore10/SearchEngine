@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QDialog, QVBoxLayout, QLabel, QLineEdit, QPushButton,QTableWidgetItem
-from Data.CSVDataSourceRead import CSVDataSourceRead
+from Backend.CSVDataSourceRead import CSVDataSourceReader
 
 class CustomPopup(QDialog):
     def __init__(self,MainWindow):
@@ -28,18 +28,4 @@ class CustomPopup(QDialog):
         self.setLayout(layout)
 
     def on_button_clicked(self, text):
-        obj = Engine()
-        data = obj.result()
-        item = QTableWidgetItem("data")
-        self.SearchUi.tableWidget.setItem(0, 1, item)
         self.close()
-
-class Engine:
-    def result(self):
-        obj = CSVDataSourceRead("DataSource/sales_data.csv")
-        data = obj.reads()
-        
-
-        return data
-
-

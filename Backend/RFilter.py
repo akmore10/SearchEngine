@@ -1,4 +1,4 @@
-from Data.Interface.IDataFilter import DataFilter
+from Backend.Interface.IDataFilter import DataFilter
 
 class RFilter(DataFilter):
 

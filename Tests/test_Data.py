@@ -1,13 +1,10 @@
-from Data.CSVDataSourceRead import CSVDataSourceRead
-import os
+from Backend.CSVDataSourceRead import CSVDataSourceRead
 from pandas import DataFrame
-from dotenv import load_dotenv
-from Data.RFilter import RFilter
-from Data.SKUDataSource import SKUDataSource
+from Backend.RFilter import RFilter
+from Backend.SKUDataSource import SKUDataSource
 from DataStructures.SKU import SKU
 
 
-load_dotenv("../config.env")
 fileName = "../DataSource/sales_data.csv"
 obj = CSVDataSourceRead(fileName)
 

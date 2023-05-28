@@ -1,11 +1,12 @@
 from DataStructures.Trie import Trie
 from Extraction.extract import *
-from Data.CSVDataSourceRead import CSVDataSourceRead
-from Data.RFilter import RFilter
+from Backend.CSVDataSourceRead import CSVDataSourceReader
+from Backend.RFilter import RFilter
 import os
 from dotenv import load_dotenv
 
-load_dotenv("./config.env")
+
+load_dotenv("../config.env")
 
 class Engine:
     def __init__(self,dataSource , dataFilter):
@@ -18,6 +19,6 @@ class Engine:
         print(self.trie.root.children)
 
 fileName = os.getenv("DATASOURCE")
-engine = Engine(CSVDataSourceRead(fileName) , RFilter())
+engine = Engine(CSVDataSourceReader(fileName) , RFilter())
 engine.buildEngine()
 

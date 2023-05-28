@@ -1,6 +1,6 @@
 from DataStructures.SKU import SKU
-from Data import CSVDataSourceRead
-from Data.Interface.IDataSource import DataSource
+from Backend import CSVDataSourceRead
+from Backend.Interface.IDataSource import DataSource
 
 
 class SKUDataSource(DataSource):

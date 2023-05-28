@@ -1,8 +1,8 @@
 from pandas import DataFrame
 from dataclasses import dataclass
 from DataStructures.SKU import *
-from Data.Interface.IDataSource import DataSourceRead
-from Data.RFilter import DataFilter
+from Backend.Interface.IDataSource import DataSourceRead
+from Backend.RFilter import DataFilter
 
 @dataclass
 class ExtractData:

@@ -1,9 +1,9 @@
 
 from pandas import DataFrame
-from Data.Interface.IDataSource import DataSourceRead
+from Backend.Interface.IDataSource import DataSourceRead
 import pandas as pd
 
-class CSVDataSourceRead(DataSourceRead):
+class CSVDataSourceReader(DataSourceRead):
     def __init__(self,fileName):
         self.fileName = fileName
     def reads(self) -> DataFrame:
