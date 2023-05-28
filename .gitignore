@@ -127,7 +127,11 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+Tests/__pycache__
+Tests/.pytest_cache
+Extraction/__pycache__
+DataStructures/__pycache__
+Backend/__pycache__
 # Spyder project settings
 .spyderproject
 .spyproject

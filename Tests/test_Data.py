@@ -1,12 +1,12 @@
-from Backend.CSVDataSourceRead import CSVDataSourceRead
+from Backend.CSVDataSourceRead import CSVDataSourceReader
 from pandas import DataFrame
 from Backend.RFilter import RFilter
 from Backend.SKUDataSource import SKUDataSource
 from DataStructures.SKU import SKU
 
 
-fileName = "../DataSource/sales_data.csv"
-obj = CSVDataSourceRead(fileName)
+fileName = "../DataSet/sales_data.csv"
+obj = CSVDataSourceReader(fileName)
 
 def test_Data():
     assert type(obj.reads()) == DataFrame

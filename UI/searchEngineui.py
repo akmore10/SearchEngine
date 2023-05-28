@@ -92,6 +92,7 @@ class Ui_MainWindow(object):
         self.label_3.setText("Lowest Sales")
         self.menuSearch.setTitle("Search")
         self.toolBar.setWindowTitle("toolBar")
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
     
@@ -103,16 +104,19 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle("Search Engine")
-        qAction = QAction("popup",MainWindow)
+        qAction = QAction("Find",MainWindow)
         qAction.triggered.connect(self.popup)
         self.menuSearch.addAction(qAction)
 
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
+    
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+    
     MainWindow.show()
     sys.exit(app.exec_())
