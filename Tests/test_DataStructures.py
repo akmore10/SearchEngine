@@ -7,6 +7,4 @@ for word in words:
 
 def test_FindWords():
     result = obj.findWords("ba")
-    print(result)
-
-test_FindWords()
+    assert type(result) == list
